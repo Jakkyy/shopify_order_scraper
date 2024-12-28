@@ -1,0 +1,37 @@
+{
+	"name": "Jvkky helper",
+	"version": "0.1",
+	"description": "E salam haleikum",
+	"manifest_version": 3,
+	"author": "Jacopo Carta",
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"storage",
+		"scripting",
+		"clipboardWrite",
+		"clipboardRead",
+		"notifications"
+	],
+	"action": {
+		"default_popup": "index.html",
+		"default_title": "La ricetta per un tiramisù perfettoh"
+	},
+	"icons": {
+		"16": "logo.png",
+		"48": "logo.png",
+		"128": "logo.png"
+	},
+	"content_scripts": [
+		{
+			"all_frames": false,
+			"matches": ["<all_urls>"],
+			"js": ["content_scripts.js"],
+			"css": ["script.css"]
+		}
+	],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"host_permissions": ["<all_urls>"]
+}
